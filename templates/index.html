@@ -1,0 +1,27 @@
+<center><h1>HUSSAIN</h1>
+    <hr>
+<a href="{% url 'insert' %}">Insert</a>
+<hr>
+<table border="4">
+    <tr>
+        <td>No</td>
+        <td>Title</td>
+        <td>Price</td>
+        <td>Date</td>
+        <td>cover</td>
+        <td>Edit</td>
+        <td>Delete</td>
+    </tr>
+    {% for obj in object_list %}
+    <tr>
+        <td>{{obj.id}}</td>
+        <td>{{obj.title}}</td>
+        <td>{{obj.price}}</td>
+        <td>{{obj.publish}}</td>
+        <td>{{obj.cover.url}}</td>
+        <td><a href="{% url 'edit' obj.id %}">Edit</a></td>
+        <td><a href="{% url 'delete' obj.id %}">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+</center>
